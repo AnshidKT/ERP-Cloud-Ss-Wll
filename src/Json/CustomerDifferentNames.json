@@ -1,0 +1,292 @@
+[
+ {
+  "CustomerID": 3218,
+  "NameID": 105,
+  "Name": "SEAZEN GROUP"
+ },
+ {
+  "CustomerID": 3218,
+  "NameID": 106,
+  "Name": "TRAPANI RESTAURENT"
+ },
+ {
+  "CustomerID": 3247,
+  "NameID": 109,
+  "Name": "TECH VISION TRADING AND CONTRACTING W.L.L"
+ },
+ {
+  "CustomerID": 3247,
+  "NameID": 110,
+  "Name": "MINISTRY OF INTERIOR"
+ },
+ {
+  "CustomerID": 3278,
+  "NameID": 119,
+  "Name": "MASTER SYSTEM INTEGRATOR PROJECTS W.L.L"
+ },
+ {
+  "CustomerID": 3278,
+  "NameID": 120,
+  "Name": "MSI PROJECTS"
+ },
+ {
+  "CustomerID": 3278,
+  "NameID": 121,
+  "Name": "LIBRA TRADING COMPANY"
+ },
+ {
+  "CustomerID": 3278,
+  "NameID": 122,
+  "Name": "AVANCEON"
+ },
+ {
+  "CustomerID": 3278,
+  "NameID": 123,
+  "Name": "JOHNSON CONTROLS"
+ },
+ {
+  "CustomerID": 3278,
+  "NameID": 124,
+  "Name": "PROGRESS SECURITY SYSTEMS"
+ },
+ {
+  "CustomerID": 3278,
+  "NameID": 125,
+  "Name": "SANGAI"
+ },
+ {
+  "CustomerID": 3278,
+  "NameID": 126,
+  "Name": "ARMITI"
+ },
+ {
+  "CustomerID": 3278,
+  "NameID": 127,
+  "Name": "AIMS"
+ },
+ {
+  "CustomerID": 3322,
+  "NameID": 128,
+  "Name": "GALERIES LAFAYETTE"
+ },
+ {
+  "CustomerID": 3402,
+  "NameID": 135,
+  "Name": "PETROTUBECARE INTERNATIONAL W.L.L"
+ },
+ {
+  "CustomerID": 3402,
+  "NameID": 136,
+  "Name": "PETROFAC QATAR"
+ },
+ {
+  "CustomerID": 3297,
+  "NameID": 137,
+  "Name": "AL HOUT REAL ESTATE"
+ },
+ {
+  "CustomerID": 3297,
+  "NameID": 138,
+  "Name": "AL SHAREEF HOLDINGS"
+ },
+ {
+  "CustomerID": 3297,
+  "NameID": 139,
+  "Name": "VFM"
+ },
+ {
+  "CustomerID": 3297,
+  "NameID": 144,
+  "Name": "VALUE FACILITY MANAGEMENT AND MAINTENANCE"
+ },
+ {
+  "CustomerID": 3466,
+  "NameID": 147,
+  "Name": "KIRTANLAL SCAFFOLDING & FORMWORK"
+ },
+ {
+  "CustomerID": 3502,
+  "NameID": 149,
+  "Name": "SPLENDID PROJECT COMPANY W.L.L"
+ },
+ {
+  "CustomerID": 3502,
+  "NameID": 150,
+  "Name": "SPLENDID RENT A CAR COMPANY W.L.L"
+ },
+ {
+  "CustomerID": 3341,
+  "NameID": 158,
+  "Name": "GREEN OASIS ESTABLISHMENT"
+ },
+ {
+  "CustomerID": 3341,
+  "NameID": 159,
+  "Name": "BATTEEL BAKERY & CAFE"
+ },
+ {
+  "CustomerID": 3565,
+  "NameID": 165,
+  "Name": "PROMEDIC"
+ },
+ {
+  "CustomerID": 3565,
+  "NameID": 166,
+  "Name": "QMEDIC"
+ },
+ {
+  "CustomerID": 3706,
+  "NameID": 173,
+  "Name": "ZOLL MEDICAL"
+ },
+ {
+  "CustomerID": 3706,
+  "NameID": 174,
+  "Name": "FIRST HAND RESPONSE, LLC."
+ },
+ {
+  "CustomerID": 3943,
+  "NameID": 185,
+  "Name": "AAMAL CEMENT INDUSTRIES WLL"
+ },
+ {
+  "CustomerID": 3943,
+  "NameID": 186,
+  "Name": "AAMAL READYMIX WLL"
+ },
+ {
+  "CustomerID": 3863,
+  "NameID": 187,
+  "Name": "AAMAL READYMIX W.L.L"
+ },
+ {
+  "CustomerID": 3863,
+  "NameID": 188,
+  "Name": "AAMAL CEMENT INDUSTRIES WLL"
+ },
+ {
+  "CustomerID": 4069,
+  "NameID": 189,
+  "Name": "TRINITY QATAR"
+ },
+ {
+  "CustomerID": 4069,
+  "NameID": 190,
+  "Name": "BEGIN TRANSPORTING  CONTRACTING AND SERVICES WLL"
+ },
+ {
+  "CustomerID": 4163,
+  "NameID": 199,
+  "Name": "DEVAN REAL ESTATE"
+ },
+ {
+  "CustomerID": 4163,
+  "NameID": 200,
+  "Name": "THE BENTLEY LUXURY HOTEL & SUITES"
+ },
+ {
+  "CustomerID": 4410,
+  "NameID": 204,
+  "Name": "BIN OMRAN TRADING AND TELECOMMUNICATIONS"
+ },
+ {
+  "CustomerID": 4648,
+  "NameID": 209,
+  "Name": "FOSS AND ESG LEBANON SAL"
+ },
+ {
+  "CustomerID": 4648,
+  "NameID": 210,
+  "Name": "CONNECT CATERING SERVICES SAL"
+ },
+ {
+  "CustomerID": 4914,
+  "NameID": 223,
+  "Name": "PWE\/GEC\/AQUALIA JV – CZF028"
+ },
+ {
+  "CustomerID": 4914,
+  "NameID": 224,
+  "Name": "FCC AQUALIA"
+ },
+ {
+  "CustomerID": 4954,
+  "NameID": 225,
+  "Name": "AL ORAIQ REAL ESTATE"
+ },
+ {
+  "CustomerID": 4954,
+  "NameID": 226,
+  "Name": "VALUE FACILITY MANAGEMENT & MAINTENANCE"
+ },
+ {
+  "CustomerID": 4914,
+  "NameID": 227,
+  "Name": "GEC CONTRACTING SERVICES & TRADING"
+ },
+ {
+  "CustomerID": 5258,
+  "NameID": 230,
+  "Name": "JASMINE AIRCONDITIONING SYSTEMS LLC"
+ },
+ {
+  "CustomerID": 5258,
+  "NameID": 231,
+  "Name": "BURBERRY MIDDLE EAST LLC"
+ },
+ {
+  "CustomerID": 5128,
+  "NameID": 232,
+  "Name": "GIGGLES NURSERY"
+ },
+ {
+  "CustomerID": 5128,
+  "NameID": 233,
+  "Name": "CESK PRE-SCHOOL"
+ },
+ {
+  "CustomerID": 5128,
+  "NameID": 234,
+  "Name": "KIDS GARDEN CLUB NURSERY"
+ },
+ {
+  "CustomerID": 3535,
+  "NameID": 237,
+  "Name": "BRICKLAYER CONTRACTING & TRADING"
+ },
+ {
+  "CustomerID": 3535,
+  "NameID": 238,
+  "Name": "FINDWELL TRADING & CONTRACTING WLL"
+ },
+ {
+  "CustomerID": 5418,
+  "NameID": 239,
+  "Name": "SHANU ABOOBAKER  "
+ },
+ {
+  "CustomerID": 5418,
+  "NameID": 240,
+  "Name": "QATAR NATIONAL LIBERARY QNL."
+ },
+ {
+  "CustomerID": 5479,
+  "NameID": 241,
+  "Name": "LA JOLLA HOTEL"
+ },
+ {
+  "CustomerID": 5479,
+  "NameID": 242,
+  "Name": "WALDORF ASTORIA DOHA WEST BAY"
+ },
+ {
+  "CustomerID": 5518,
+  "NameID": 245,
+  "Name": "CRUISE INTERNATIONAL TRADING. TRANSPORTATIONS AND CONTRACTING"
+ },
+ {
+  "CustomerID": 5518,
+  "NameID": 246,
+  "Name": "CRUISE INTERNATIONAL"
+ }
+]

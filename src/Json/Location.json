@@ -1,0 +1,38 @@
+[
+ {
+  "LocationControlID": 297,
+  "LocationSerialNo": 634,
+  "LocationCode": "INHOUSE_MAMURA",
+  "Location": "Training Center"
+ },
+ {
+  "LocationControlID": 297,
+  "LocationSerialNo": 635,
+  "LocationCode": "INHOUSE_AL_KHOR",
+  "Location": "Al Khor (In House)"
+ },
+ {
+  "LocationControlID": 297,
+  "LocationSerialNo": 636,
+  "LocationCode": "ONSITE",
+  "Location": "On Site"
+ },
+ {
+  "LocationControlID": 297,
+  "LocationSerialNo": 637,
+  "LocationCode": "ON_BOARD",
+  "Location": "On Board"
+ },
+ {
+  "LocationControlID": 297,
+  "LocationSerialNo": 638,
+  "LocationCode": "OFF_SHORE",
+  "Location": "Off Shore"
+ },
+ {
+  "LocationControlID": 297,
+  "LocationSerialNo": 639,
+  "LocationCode": "E-LEARNING",
+  "Location": "E - Learning"
+ }
+]

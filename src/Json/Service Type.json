@@ -1,0 +1,20 @@
+[
+ {
+  "ServiceTypeCtrID": 285,
+  "ServiceTypeSerialNo": 594,
+  "ServiceTypeCode": "SERVICES",
+  "ServiceType": "Services"
+ },
+ {
+  "ServiceTypeCtrID": 285,
+  "ServiceTypeSerialNo": 595,
+  "ServiceTypeCode": "INVENTORY",
+  "ServiceType": "Inventory"
+ },
+ {
+  "ServiceTypeCtrID": 285,
+  "ServiceTypeSerialNo": 596,
+  "ServiceTypeCode": "OTHERS",
+  "ServiceType": "Others"
+ }
+]

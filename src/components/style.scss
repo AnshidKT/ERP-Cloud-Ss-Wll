@@ -1,0 +1,84 @@
+* {
+    padding: 0;
+    margin: 0;
+   
+  }
+  
+  .main-tab {
+    width: 100%;
+    height: 80px;
+    background-color: rgb(245, 245, 245);
+  }
+  .sub-tab-div {
+    width: 100%;
+    height: 80px;
+    // background-color: rgb(219, 52, 52);
+  
+    .subtab-sub-div {
+      width: 20%;
+      height: 100%;
+      align-items: flex-start;
+      justify-content: center;
+      display: flex;
+      // background-color: aqua;
+    }
+  }
+  .general-input {
+    width: 415px;
+    height: 36px;
+    border: 0;
+    outline: none;
+    padding: 6px;
+    border: 1px solid rgba(128, 128, 128, 0.74);
+    margin: 10px;
+  }
+  .reg-select {
+    width: 850px;
+    height: 45px;
+    margin: 10px;
+  }
+  
+  .general-container{
+    width: 100%;
+    height: 80vh;
+    // background-color: rgb(131, 0, 0);
+    .details-sub-container{
+      width: 100%;
+      height: 70%;
+      // background-color: rgb(1, 128, 247);
+      overflow-x: scroll; 
+    }
+    .table-container {
+      overflow-x: auto; 
+      max-width: 100%; 
+      height: 100%;
+      background-color: rgb(245, 245, 245);
+    }
+    
+    .table {
+      width: 100%; 
+      white-space: nowrap; 
+    }
+    
+  }
+  .details-modal-div{
+    width: 100%;
+    height: 60%;
+    // background-color: aquamarine;
+  }
+  .exam-input-td{
+    border: 0;
+    outline: none;
+    height: 30px;
+    width: 70%;
+  }
+  .btns-div{
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+  .btns{
+    width: 80px;
+    height: 25px;
+    margin: 5px;
+  }
+  

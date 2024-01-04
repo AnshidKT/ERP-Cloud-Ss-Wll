@@ -1,0 +1,20 @@
+[
+ {
+  "LangControlID": 296,
+  "LanSerialNo": 631,
+  "LangCode": "TLHINDI",
+  "Languge": "Hindi"
+ },
+ {
+  "LangControlID": 296,
+  "LanSerialNo": 632,
+  "LangCode": "TLENGLISH",
+  "Languge": "English"
+ },
+ {
+  "LangControlID": 296,
+  "LanSerialNo": 633,
+  "LangCode": "TLARABI",
+  "Languge": "Arabic"
+ }
+]

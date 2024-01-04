@@ -1,0 +1,177 @@
+[
+ {
+  "ServiceID": 5,
+  "ID": 4,
+  "Name": "FIRE FIGHTING"
+ },
+ {
+  "ServiceID": 5,
+  "ID": 5,
+  "Name": "FIRE & SAFETY AWARENESS"
+ },
+ {
+  "ServiceID": 5,
+  "ID": 12,
+  "Name": "BASIC FIRE AWARENESS  "
+ },
+ {
+  "ServiceID": 5,
+  "ID": 13,
+  "Name": "Basic Fire Fighting & Breathing Apparatus  "
+ },
+ {
+  "ServiceID": 5,
+  "ID": 14,
+  "Name": "BASIC FIRE FIGHTING & BUILDING EVACUATION  "
+ },
+ {
+  "ServiceID": 5,
+  "ID": 15,
+  "Name": "BASIC FIRE FIGHTING WITH SCBA  "
+ },
+ {
+  "ServiceID": 5,
+  "ID": 16,
+  "Name": "BASIC FIRE SAFETY TRAINING  "
+ },
+ {
+  "ServiceID": 29,
+  "ID": 49,
+  "Name": "ELECTRICAL AWARENESS TRAINING  "
+ },
+ {
+  "ServiceID": 71,
+  "ID": 99,
+  "Name": "FOOD SAFETY, HEALTH & HYGIENE TRAINING  "
+ },
+ {
+  "ServiceID": 71,
+  "ID": 100,
+  "Name": "FOOD SAFETY  "
+ },
+ {
+  "ServiceID": 71,
+  "ID": 101,
+  "Name": "FOOD SAFETY (HACCP) AWARENESS  "
+ },
+ {
+  "ServiceID": 71,
+  "ID": 102,
+  "Name": "BASIC FOOD HYGIENE TRAINING  - food safety  "
+ },
+ {
+  "ServiceID": 29,
+  "ID": 149,
+  "Name": "ELECTRICAL RISK AWARENESS TRAINING"
+ },
+ {
+  "ServiceID": 426,
+  "ID": 150,
+  "Name": "SPILL RESPONSE PREVENTION"
+ },
+ {
+  "ServiceID": 426,
+  "ID": 151,
+  "Name": "SPILL RESPONSE AWARENESS TRAINING"
+ },
+ {
+  "ServiceID": 426,
+  "ID": 152,
+  "Name": "BASIC SPILL PREVENTION TRAINING"
+ },
+ {
+  "ServiceID": 426,
+  "ID": 169,
+  "Name": "EMERGENCY SPILL RESPONSE"
+ },
+ {
+  "ServiceID": 494,
+  "ID": 174,
+  "Name": "EMERGENCY RESPONSE TEAM"
+ },
+ {
+  "ServiceID": 494,
+  "ID": 175,
+  "Name": "EMERGENCY RESCUE TEAM"
+ },
+ {
+  "ServiceID": 129,
+  "ID": 183,
+  "Name": "BATTERY POWERED FORKLIFT OPERATOR - ASSESSMENT"
+ },
+ {
+  "ServiceID": 5,
+  "ID": 186,
+  "Name": "FIRE FIGHTING AWARENESS"
+ },
+ {
+  "ServiceID": 494,
+  "ID": 207,
+  "Name": "EMERGENCY RESPONSE TEAM (For Drivers)"
+ },
+ {
+  "ServiceID": 711,
+  "ID": 234,
+  "Name": "OFFICE ERGONOMICS AWARENESS"
+ },
+ {
+  "ServiceID": 29,
+  "ID": 287,
+  "Name": "ELECTRICAL SUPERVISOR AWARENESS TRAINING"
+ },
+ {
+  "ServiceID": 573,
+  "ID": 300,
+  "Name": "EOT\/GANTRY CRANE OPERATOR TRAINING"
+ },
+ {
+  "ServiceID": 573,
+  "ID": 301,
+  "Name": "EOT CRANE OPERATOR TRAINING"
+ },
+ {
+  "ServiceID": 71,
+  "ID": 302,
+  "Name": "FOOD SAFETY AWARENESS TRAINING"
+ },
+ {
+  "ServiceID": 71,
+  "ID": 303,
+  "Name": "FOOD HANDLER AWARENESS TRAINING"
+ },
+ {
+  "ServiceID": 5,
+  "ID": 304,
+  "Name": "BASIC FIRE FIGHTING \/ FIRE AWARENESS"
+ },
+ {
+  "ServiceID": 29,
+  "ID": 305,
+  "Name": "Electrical Safety Awareness (Level 0)"
+ },
+ {
+  "ServiceID": 711,
+  "ID": 306,
+  "Name": "ERGONOMIC"
+ },
+ {
+  "ServiceID": 417,
+  "ID": 307,
+  "Name": "PALLET TRUCK OPERATOR ASSESSMENT"
+ },
+ {
+  "ServiceID": 129,
+  "ID": 308,
+  "Name": "Reach Truck Operator Assessment"
+ },
+ {
+  "ServiceID": 733,
+  "ID": 309,
+  "Name": "EMERGENCY RESPONDER"
+ },
+ {
+  "ServiceID": 494,
+  "ID": 310,
+  "Name": "EMERGENCY RESPONDER"
+ }
+]
