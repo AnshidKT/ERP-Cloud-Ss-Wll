@@ -21,7 +21,7 @@ const Details = ({ handleChangeMain }) => {
   const [PopupExamUnit, setPopupExamUnit] = useState("");
   const [isModalVisible, setModalVisible] = useState(false);
   const [approval, setApproval] = useState("");
-//
+  //
   const showModal = () => {
     setModalVisible(false);
 
@@ -34,7 +34,7 @@ const Details = ({ handleChangeMain }) => {
       }, 700);
     }
   };
-//
+  //
   useEffect(() => {
     if (selectedService) {
       setSlNo((prevSlNo) => prevSlNo + 1);
@@ -42,7 +42,7 @@ const Details = ({ handleChangeMain }) => {
       setSlNo(0);
     }
   }, [selectedService]);
-//
+  //
   //LOCALSTORAGE
   useEffect(() => {
     const savedAdditionalRows = JSON.parse(
@@ -67,7 +67,7 @@ const Details = ({ handleChangeMain }) => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-//
+  //
   const handleOkButtonClick = () => {
     if (selectedService) {
       setSelectedServiceName(selectedService.value);
@@ -87,7 +87,7 @@ const Details = ({ handleChangeMain }) => {
     }
     closeModal();
   };
-//
+  //
   //DELETE
   const handleDeleteButtonClick = (index) => {
     const updatedRows = [...additionalRows];
