@@ -16,7 +16,9 @@ const Entry = () => {
   const [salesOrderOptions, setSalesOrderOptions] = useState([]);
 
 
-useEffect(() => {
+
+  
+  useEffect(() => {
     const savedCustomerName = JSON.parse(localStorage.getItem("customerName"));
     const savedCertificate = JSON.parse(localStorage.getItem("certificate"));
     const savedScheduleType = JSON.parse(localStorage.getItem("scheduleType"));
@@ -29,6 +31,11 @@ useEffect(() => {
     if (savedSalesOrder) setSalesOrder(savedSalesOrder);
     if (savedServiceType) setServiceType(savedServiceType);
   }, []);
+
+
+
+
+
 
 
   const handleNameChange = async (selectedOptions) => {

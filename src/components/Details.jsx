@@ -43,6 +43,20 @@ const Details = ({ handleChangeMain }) => {
     }
   }, [selectedService]);
 
+  useEffect(() => {
+    // Retrieve data from localStorage
+    const savedAdditionalRows = JSON.parse(
+      localStorage.getItem("additionalRows")
+    );
+    const savedPopupExamUnit = localStorage.getItem("popupExamUnit");
+    const savedApproval = localStorage.getItem("approval");
+
+    // Set state based on retrieved data
+    if (savedAdditionalRows) setAdditionalRows(savedAdditionalRows);
+    if (savedPopupExamUnit) setPopupExamUnit(savedPopupExamUnit);
+    if (savedApproval) setApproval(savedApproval);
+  }, []);
+
   const openModal = (selectedOption) => {
     setSelectedService(selectedOption);
     setIsModalOpen(true);
@@ -64,6 +78,13 @@ const Details = ({ handleChangeMain }) => {
         service: selectedService?.value || "",
       };
       setAdditionalRows((prevRows) => [...prevRows, newRowData]);
+
+      localStorage.setItem(
+        "additionalRows",
+        JSON.stringify([...additionalRows, newRowData])
+      );
+      localStorage.setItem("popupExamUnit", PopupExamUnit);
+      localStorage.setItem("approval", approval);
     }
     closeModal();
   };
@@ -72,10 +93,16 @@ const Details = ({ handleChangeMain }) => {
     const updatedRows = [...additionalRows];
     updatedRows.splice(index, 1);
     setAdditionalRows(updatedRows);
+
+    localStorage.setItem("additionalRows", JSON.stringify(updatedRows));
   };
 
   const handleClearButtonClick = () => {
     setAdditionalRows([]);
+
+    localStorage.removeItem("additionalRows");
+    localStorage.removeItem("popupExamUnit");
+    localStorage.removeItem("approval");
   };
 
   const salesOrderNo = ServiceList.map((item) => ({
