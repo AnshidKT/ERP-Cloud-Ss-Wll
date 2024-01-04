@@ -21,7 +21,7 @@ const Details = ({ handleChangeMain }) => {
   const [PopupExamUnit, setPopupExamUnit] = useState("");
   const [isModalVisible, setModalVisible] = useState(false);
   const [approval, setApproval] = useState("");
-
+//
   const showModal = () => {
     setModalVisible(false);
 
@@ -34,7 +34,7 @@ const Details = ({ handleChangeMain }) => {
       }, 700);
     }
   };
-
+//
   useEffect(() => {
     if (selectedService) {
       setSlNo((prevSlNo) => prevSlNo + 1);
@@ -42,21 +42,20 @@ const Details = ({ handleChangeMain }) => {
       setSlNo(0);
     }
   }, [selectedService]);
-
+//
+  //LOCALSTORAGE
   useEffect(() => {
-    // Retrieve data from localStorage
     const savedAdditionalRows = JSON.parse(
       localStorage.getItem("additionalRows")
     );
     const savedPopupExamUnit = localStorage.getItem("popupExamUnit");
     const savedApproval = localStorage.getItem("approval");
 
-    // Set state based on retrieved data
     if (savedAdditionalRows) setAdditionalRows(savedAdditionalRows);
     if (savedPopupExamUnit) setPopupExamUnit(savedPopupExamUnit);
     if (savedApproval) setApproval(savedApproval);
   }, []);
-
+  //
   const openModal = (selectedOption) => {
     setSelectedService(selectedOption);
     setIsModalOpen(true);
@@ -68,7 +67,7 @@ const Details = ({ handleChangeMain }) => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-
+//
   const handleOkButtonClick = () => {
     if (selectedService) {
       setSelectedServiceName(selectedService.value);
@@ -88,7 +87,8 @@ const Details = ({ handleChangeMain }) => {
     }
     closeModal();
   };
-
+//
+  //DELETE
   const handleDeleteButtonClick = (index) => {
     const updatedRows = [...additionalRows];
     updatedRows.splice(index, 1);
@@ -96,7 +96,8 @@ const Details = ({ handleChangeMain }) => {
 
     localStorage.setItem("additionalRows", JSON.stringify(updatedRows));
   };
-
+  //
+  //CLEAR
   const handleClearButtonClick = () => {
     setAdditionalRows([]);
 
@@ -104,7 +105,7 @@ const Details = ({ handleChangeMain }) => {
     localStorage.removeItem("popupExamUnit");
     localStorage.removeItem("approval");
   };
-
+  //
   const salesOrderNo = ServiceList.map((item) => ({
     value: item.ServiceName,
     label: item.ID,

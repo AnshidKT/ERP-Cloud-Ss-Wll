@@ -15,9 +15,7 @@ const Entry = () => {
   const [certificateOptions, setCertificateOptions] = useState([]);
   const [salesOrderOptions, setSalesOrderOptions] = useState([]);
 
-
-
-  
+  //LOACLSTORAGE
   useEffect(() => {
     const savedCustomerName = JSON.parse(localStorage.getItem("customerName"));
     const savedCertificate = JSON.parse(localStorage.getItem("certificate"));
@@ -31,13 +29,9 @@ const Entry = () => {
     if (savedSalesOrder) setSalesOrder(savedSalesOrder);
     if (savedServiceType) setServiceType(savedServiceType);
   }, []);
+  //
 
-
-
-
-
-
-
+  //
   const handleNameChange = async (selectedOptions) => {
     setCustomerName(selectedOptions);
 
@@ -73,7 +67,8 @@ const Entry = () => {
     localStorage.removeItem("salesOrder");
     localStorage.removeItem("serviceType");
   };
-
+  //
+  //
   const handleCertificateChange = (selectedOptions) => {
     setCertificate(selectedOptions);
 
@@ -97,7 +92,7 @@ const Entry = () => {
 
     localStorage.setItem("serviceType", JSON.stringify(selectedOptions));
   };
-
+  //
   const CustomerName = Customerjson.map((item) => ({
     value: item.CustomerID,
     label: item.CustomerName,
