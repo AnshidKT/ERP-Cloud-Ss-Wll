@@ -18,13 +18,13 @@ const Details = ({ handleChangeMain }) => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
-  const [selectedServiceName, setSelectedServiceName] = useState("");
+  const [selectedCertificates, setSelectedCertificates] = useState([]);
   const [slNo, setSlNo] = useState(1);
   const [additionalRows, setAdditionalRows] = useState([]);
   const [PopupExamUnit, setPopupExamUnit] = useState("");
   const [isModalVisible, setModalVisible] = useState(false);
   const [approval, setApproval] = useState("");
-  const [selectedCertificates, setSelectedCertificates] = useState([]);
+  const [selectedCustomerProjectName, setSelectedCustomerProjectName] = useState("");
 
   useEffect(() => {
     const certificatesForSelectedOrder = Certificates.filter(
@@ -37,6 +37,18 @@ const Details = ({ handleChangeMain }) => {
     setSelectedCertificates(certificatesForSelectedOrder);
   }, [selectedSalesOrder]);
 
+  useEffect(() => {
+    // Fetch project name for the selected customer
+    const projectName = projectJson.find(
+      (item) => item.CustomerID === selectedSalesOrder?.value
+    )?.ProjectName;
+
+    // Update selectedCustomerProjectName only if there is a project name
+    if (projectName) {
+      setSelectedCustomerProjectName(projectName);
+    }
+  }, [selectedSalesOrder]);
+
   const openModal = (selectedOption) => {
     setSelectedService(selectedOption);
     setIsModalOpen(true);
@@ -46,7 +58,7 @@ const Details = ({ handleChangeMain }) => {
     const projectName = projectJson.find(
       (item) => item.CustomerID === selectedOption.value
     )?.ProjectName;
-    setSelectedServiceName(projectName || "");
+    setSelectedCustomerProjectName(projectName || "");
   };
 
   const closeModal = () => {
@@ -59,7 +71,7 @@ const Details = ({ handleChangeMain }) => {
         slNo: slNo,
         salesOrder: selectedService?.label || "",
         service: selectedService?.value || "",
-        projectName: selectedServiceName?.label || "",
+        projectName: selectedCustomerProjectName || "",
         certificateName: selectedCertificates?.label || "",
       };
 
@@ -191,9 +203,7 @@ const Details = ({ handleChangeMain }) => {
                     value={selectedSalesOrder}
                   />
                 </td>
-                <td>
-                  <td>{selectedServiceName}</td>
-                </td>
+                <td>{selectedCustomerProjectName}</td>
                 <td>
                   <Select
                     placeholder="certificate"
@@ -245,7 +255,7 @@ const Details = ({ handleChangeMain }) => {
                 <tr key={index}>
                   <td>{index + 1}</td>
                   <td>{row.salesOrder}</td>
-                  <td>{selectedServiceName}</td>
+                  <td>{selectedCustomerProjectName}</td>
                   <td>
                     <Select
                       placeholder="certificate"
@@ -336,10 +346,7 @@ const Details = ({ handleChangeMain }) => {
                 <tr>
                   <td>{slNo}</td>
                   <td>{selectedService?.label || ""}</td>
-                  {/* <td>{selectedService?.value || ""}</td> */}
-
-                  <td>{selectedServiceName}</td>
-
+                  <td>{selectedCustomerProjectName}</td>
                   <td>
                     <input
                       className="exam-input-td"
