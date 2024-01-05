@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Modal from "react-modal";
 import Select from "react-select";
-import ServiceList from "../Json/Service List.json";
 import Certificates from "../Json/CustomerDifferentNames.json";
 import savedImg from "../img/saved.png";
 import Unit from "../Json/Unit.json";
@@ -11,8 +10,12 @@ import languagejson from "../Json/Languge.json";
 import locationJson from "../Json/Location.json";
 import projectJson from "../Json/Project.json";
 import scheduleJosn from "../Json/Schedule Type.json";
+import { useSalesOrderContext } from "./CustomerContext";
 
 const Details = ({ handleChangeMain }) => {
+  const { selectedSalesOrder, salesOrderOptions, setSalesOrder } =
+    useSalesOrderContext();
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
   const [selectedServiceName, setSelectedServiceName] = useState("");
@@ -21,7 +24,57 @@ const Details = ({ handleChangeMain }) => {
   const [PopupExamUnit, setPopupExamUnit] = useState("");
   const [isModalVisible, setModalVisible] = useState(false);
   const [approval, setApproval] = useState("");
-  //
+  const [selectedCertificates, setSelectedCertificates] = useState([]);
+
+  useEffect(() => {
+    const certificatesForSelectedOrder = Certificates.filter(
+      (item) => item.CustomerID === selectedSalesOrder?.value
+    ).map((item) => ({
+      value: item.NameID,
+      label: item.Name,
+    }));
+
+    setSelectedCertificates(certificatesForSelectedOrder);
+  }, [selectedSalesOrder]);
+
+  const openModal = (selectedOption) => {
+    setSelectedService(selectedOption);
+    setIsModalOpen(true);
+    setPopupExamUnit("Yes");
+    setApproval("Enertech");
+
+    const projectName = projectJson.find(
+      (item) => item.CustomerID === selectedOption.value
+    )?.ProjectName;
+    setSelectedServiceName(projectName || "");
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleOkButtonClick = () => {
+    if (selectedService) {
+      const newRowData = {
+        slNo: slNo,
+        salesOrder: selectedService?.label || "",
+        service: selectedService?.value || "",
+        projectName: selectedServiceName?.label || "",
+        certificateName: selectedCertificates?.label || "",
+      };
+
+      setAdditionalRows((prevRows) => [...prevRows, newRowData]);
+
+      localStorage.setItem(
+        "additionalRows",
+        JSON.stringify([...additionalRows, newRowData])
+      );
+      localStorage.setItem("popupExamUnit", PopupExamUnit);
+      localStorage.setItem("approval", approval);
+    }
+    closeModal();
+  };
+
   const showModal = () => {
     setModalVisible(false);
 
@@ -34,7 +87,7 @@ const Details = ({ handleChangeMain }) => {
       }, 700);
     }
   };
-  //
+
   useEffect(() => {
     if (selectedService) {
       setSlNo((prevSlNo) => prevSlNo + 1);
@@ -42,8 +95,7 @@ const Details = ({ handleChangeMain }) => {
       setSlNo(0);
     }
   }, [selectedService]);
-  //
-  //LOCALSTORAGE
+
   useEffect(() => {
     const savedAdditionalRows = JSON.parse(
       localStorage.getItem("additionalRows")
@@ -55,40 +107,7 @@ const Details = ({ handleChangeMain }) => {
     if (savedPopupExamUnit) setPopupExamUnit(savedPopupExamUnit);
     if (savedApproval) setApproval(savedApproval);
   }, []);
-  //
-  const openModal = (selectedOption) => {
-    setSelectedService(selectedOption);
-    setIsModalOpen(true);
-    setPopupExamUnit("Yes");
-    setApproval("Enertech");
-    console.log(setApproval, "hllooooo");
-  };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-  //
-  const handleOkButtonClick = () => {
-    if (selectedService) {
-      setSelectedServiceName(selectedService.value);
-      const newRowData = {
-        slNo: slNo,
-        salesOrder: selectedService?.label || "",
-        service: selectedService?.value || "",
-      };
-      setAdditionalRows((prevRows) => [...prevRows, newRowData]);
-
-      localStorage.setItem(
-        "additionalRows",
-        JSON.stringify([...additionalRows, newRowData])
-      );
-      localStorage.setItem("popupExamUnit", PopupExamUnit);
-      localStorage.setItem("approval", approval);
-    }
-    closeModal();
-  };
-  //
-  //DELETE
   const handleDeleteButtonClick = (index) => {
     const updatedRows = [...additionalRows];
     updatedRows.splice(index, 1);
@@ -96,8 +115,7 @@ const Details = ({ handleChangeMain }) => {
 
     localStorage.setItem("additionalRows", JSON.stringify(updatedRows));
   };
-  //
-  //CLEAR
+
   const handleClearButtonClick = () => {
     setAdditionalRows([]);
 
@@ -105,16 +123,7 @@ const Details = ({ handleChangeMain }) => {
     localStorage.removeItem("popupExamUnit");
     localStorage.removeItem("approval");
   };
-  //
-  const salesOrderNo = ServiceList.map((item) => ({
-    value: item.ServiceName,
-    label: item.ID,
-  }));
 
-  const certificatesNames = Certificates.map((item) => ({
-    value: item.NameID,
-    label: item.Name,
-  }));
   const UnitId = Unit.map((item) => ({
     value: item.UnitID,
     label: item.ShortName,
@@ -173,15 +182,23 @@ const Details = ({ handleChangeMain }) => {
                 <td>0</td>
                 <td style={{ width: "auto" }}>
                   <Select
-                    onChange={openModal}
-                    value={selectedService}
+                    onChange={(selectedOption) => {
+                      openModal(selectedOption);
+                      setSalesOrder(selectedOption);
+                    }}
                     styles={customStyles}
-                    options={salesOrderNo}
+                    options={salesOrderOptions}
+                    value={selectedSalesOrder}
                   />
                 </td>
-                <td>{selectedServiceName}</td>
                 <td>
-                  <Select options={certificatesNames} />
+                  <td>{selectedServiceName}</td>
+                </td>
+                <td>
+                  <Select
+                    placeholder="certificate"
+                    options={selectedCertificates}
+                  />
                 </td>
                 <td>
                   <input
@@ -228,17 +245,18 @@ const Details = ({ handleChangeMain }) => {
                 <tr key={index}>
                   <td>{index + 1}</td>
                   <td>{row.salesOrder}</td>
-                  <td>{row.service}</td>
+                  <td>{selectedServiceName}</td>
                   <td>
-                    {" "}
-                    <Select options={certificatesNames} />
+                    <Select
+                      placeholder="certificate"
+                      options={selectedCertificates}
+                    />
                   </td>
                   <td>
                     <input
                       className="exam-input-td"
-                      value={PopupExamUnit}
+                      value={row.certificateName}
                       type="text"
-                      onChange={(e) => setPopupExamUnit(e.target.value)}
                       readOnly
                     />
                   </td>
@@ -246,29 +264,29 @@ const Details = ({ handleChangeMain }) => {
                     <input
                       type="text"
                       className="exam-input-td"
-                      value={approval}
-                      onChange={(e) => setApproval(e.target.value)}
+                      value={row.approval}
+                      readOnly
                     />
                   </td>
                   <td>
-                    <input className="exam-input-td" type="datetime-local" />
+                    <input type="datetime-local" className="exam-input-td" />
                   </td>
                   <td>
-                    {" "}
                     <Select styles={customStyles} options={scheduleList} />
                   </td>
                   <td>
-                    {" "}
                     <Select styles={customStyles} options={projectList} />
                   </td>
                   <td>
-                    {" "}
                     <Select styles={customStyles} options={UnitId} />
                   </td>
                   <td>
-                    {" "}
-                    <input className="exam-input-td" type="number" />
-                  </td>{" "}
+                    <input
+                      className="exam-input-td"
+                      type="number"
+                      value={row.quantity}
+                    />
+                  </td>
                   <td></td>
                   <td>
                     <Select styles={customStyles} options={locationList} />
@@ -318,7 +336,10 @@ const Details = ({ handleChangeMain }) => {
                 <tr>
                   <td>{slNo}</td>
                   <td>{selectedService?.label || ""}</td>
-                  <td>{selectedService?.value || ""}</td>
+                  {/* <td>{selectedService?.value || ""}</td> */}
+
+                  <td>{selectedServiceName}</td>
+
                   <td>
                     <input
                       className="exam-input-td"
@@ -352,7 +373,6 @@ const Details = ({ handleChangeMain }) => {
         {isModalVisible && (
           <Modal
             isOpen={isModalVisible}
-            // onRequestClose={hideModal}
             contentLabel="Details Saved"
             style={{
               overlay: {
