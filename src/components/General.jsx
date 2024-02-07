@@ -5,28 +5,27 @@ import ScheduleTypeJson from "../Json/Schedule Type.json";
 import CustomerCertificate from "../Json/CustomerDifferentNames.json";
 import SalesOrderjson from "../Json/SalesorderHdr.json";
 import ServiceTypejson from "../Json/Service Type.json";
+import { useSalesOrderContext } from "./CustomerContext";
 
 const Entry = () => {
+  const { setOptions } = useSalesOrderContext();
+
   const [customerName, setCustomerName] = useState(null);
   const [certificate, setCertificate] = useState(null);
   const [scheduleType, setScheduleType] = useState(null);
-  const [salesOrder, setSalesOrder] = useState(null);
   const [serviceType, setServiceType] = useState(null);
   const [certificateOptions, setCertificateOptions] = useState([]);
-  const [salesOrderOptions, setSalesOrderOptions] = useState([]);
 
   //LOACLSTORAGE
   useEffect(() => {
     const savedCustomerName = JSON.parse(localStorage.getItem("customerName"));
     const savedCertificate = JSON.parse(localStorage.getItem("certificate"));
     const savedScheduleType = JSON.parse(localStorage.getItem("scheduleType"));
-    const savedSalesOrder = JSON.parse(localStorage.getItem("salesOrder"));
     const savedServiceType = JSON.parse(localStorage.getItem("serviceType"));
 
     if (savedCustomerName) setCustomerName(savedCustomerName);
     if (savedCertificate) setCertificate(savedCertificate);
     if (savedScheduleType) setScheduleType(savedScheduleType);
-    if (savedSalesOrder) setSalesOrder(savedSalesOrder);
     if (savedServiceType) setServiceType(savedServiceType);
   }, []);
   //
@@ -47,7 +46,6 @@ const Entry = () => {
     setCertificateOptions(updatedCertificateOptions);
     setCertificate(null);
     setScheduleType(null);
-    setSalesOrder(null);
     setServiceType(null);
 
     const filteredSalesOrders = SalesOrderjson.filter(
@@ -55,16 +53,15 @@ const Entry = () => {
     );
 
     const updatedSalesOrderOptions = filteredSalesOrders.map((item) => ({
-      value: item.SalesOrderID,
-      label: item.SalesOrderID,
+      value: item.CustomerID,
+      label: item.SalesOrderNo,
     }));
 
-    setSalesOrderOptions(updatedSalesOrderOptions);
+    setOptions(updatedSalesOrderOptions);
 
     localStorage.setItem("customerName", JSON.stringify(selectedOptions));
     localStorage.removeItem("certificate");
     localStorage.removeItem("scheduleType");
-    localStorage.removeItem("salesOrder");
     localStorage.removeItem("serviceType");
   };
   //
@@ -79,12 +76,6 @@ const Entry = () => {
     setScheduleType(selectedOptions);
 
     localStorage.setItem("scheduleType", JSON.stringify(selectedOptions));
-  };
-
-  const handleSalesOrderChange = (selectedOptions) => {
-    setSalesOrder(selectedOptions);
-
-    localStorage.setItem("salesOrder", JSON.stringify(selectedOptions));
   };
 
   const handleServiceTypeChange = (selectedOptions) => {
@@ -133,13 +124,6 @@ const Entry = () => {
           options={ScheduleTypeList}
           onChange={handleScheduleTypeChange}
           value={scheduleType}
-        />
-        <Select
-          className="reg-select"
-          placeholder="Sales Order"
-          options={salesOrderOptions}
-          onChange={handleSalesOrderChange}
-          value={salesOrder}
         />
         <Select
           className="reg-select"
