@@ -16,7 +16,7 @@ const Entry = () => {
   const [serviceType, setServiceType] = useState(null);
   const [certificateOptions, setCertificateOptions] = useState([]);
 
-  //LOACLSTORAGe
+  //LOACLSTORAGE
   useEffect(() => {
     const savedCustomerName = JSON.parse(localStorage.getItem("customerName"));
     const savedCertificate = JSON.parse(localStorage.getItem("certificate"));
