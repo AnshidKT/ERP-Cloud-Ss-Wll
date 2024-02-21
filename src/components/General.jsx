@@ -28,7 +28,7 @@ const Entry = () => {
     if (savedScheduleType) setScheduleType(savedScheduleType);
     if (savedServiceType) setServiceType(savedServiceType);
   }, []);
-  /////
+  ///
 
   //
   const handleNameChange = async (selectedOptions) => {
