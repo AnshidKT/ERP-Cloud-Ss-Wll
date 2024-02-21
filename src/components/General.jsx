@@ -65,7 +65,7 @@ const Entry = () => {
     localStorage.removeItem("serviceType");
   };
   //
-  //
+  ///
   const handleCertificateChange = (selectedOptions) => {
     setCertificate(selectedOptions);
 
