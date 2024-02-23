@@ -4,19 +4,23 @@ import MainTab from "./components/MainTab";
 import Entry from "./components/General";
 import Details from "./components/Details";
 import { SalesOrderProvider } from "./components/CustomerContext";
+import Demo from "./components/Demo";
 
 function App() {
   return (
-    <BrowserRouter>
-    <SalesOrderProvider>
-      <Routes>
-        <Route path="/" element={<MainTab />}>
-          <Route element={<Entry />} />
-          <Route element={<Details />} />
-        </Route>
-      </Routes>
-    </SalesOrderProvider>
-  </BrowserRouter>
+    <div>
+      <Demo/>
+    </div>
+  //   <BrowserRouter>
+  //   <SalesOrderProvider>
+  //     <Routes>
+  //       <Route path="/" element={<MainTab />}>
+  //         <Route element={<Entry />} />
+  //         <Route element={<Details />} />
+  //       </Route>
+  //     </Routes>
+  //   </SalesOrderProvider>
+  // </BrowserRouter>
   );
 }
 
