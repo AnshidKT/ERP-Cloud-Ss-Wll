@@ -44,7 +44,6 @@ const Demo = () => {
     <div>
       <form className="form" onSubmit={handleSubmit}>
         <p>Login</p>
-
         <div className="group">
           <input
             required={true}
