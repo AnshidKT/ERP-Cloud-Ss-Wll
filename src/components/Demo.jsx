@@ -85,8 +85,7 @@ const Demo = () => {
             className="main-input"
             type="text"
             onChange={(e) => setNumber(e.target.value)}
-            value={number}
-          />
+            value={number}      />
           <span className="highlight-span"></span>
           <label className="lebal-email">number</label>
         </div>
