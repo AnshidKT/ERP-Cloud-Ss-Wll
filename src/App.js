@@ -8,19 +8,19 @@ import Demo from "./components/Demo";
 
 function App() {
   return (
-    <div>
-      <Demo/>
-    </div>
-  //   <BrowserRouter>
-  //   <SalesOrderProvider>
-  //     <Routes>
-  //       <Route path="/" element={<MainTab />}>
-  //         <Route element={<Entry />} />
-  //         <Route element={<Details />} />
-  //       </Route>
-  //     </Routes>
-  //   </SalesOrderProvider>
-  // </BrowserRouter>
+    // <div>
+    //   <Demo/>
+    // </div>
+    <BrowserRouter>
+    <SalesOrderProvider>
+      <Routes>
+        <Route path="/" element={<MainTab />}>
+          <Route element={<Entry />} />
+          <Route element={<Details />} />
+        </Route>
+      </Routes>
+    </SalesOrderProvider>
+  </BrowserRouter>
   );
 }
 
