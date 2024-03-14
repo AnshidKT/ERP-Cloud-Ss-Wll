@@ -37,12 +37,11 @@ const Details = ({ handleChangeMain }) => {
     setSelectedCertificates(certificatesForSelectedOrder);
   }, [selectedSalesOrder]);
 
-  const openModal = (selectedOption) => {
-    setSelectedService(selectedOption);
-    setIsModalOpen(true);
+    const openModal = (selectedOption) => {
+      setSelectedService(selectedOption);
+      setIsModalOpen(true);
     setPopupExamUnit("Yes");
     setApproval("Enertech");
-
     const projectName = projectJson.find(
       (item) => item.CustomerID === selectedOption.value
     )?.ProjectName;
