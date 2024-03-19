@@ -153,8 +153,7 @@ const Details = ({ handleChangeMain }) => {
     }),
   };
 
-  return (
-    <div className="general-container">
+  return ( <div className="general-container">
       <div className="details-sub-container">
           <table className="table table-bordered table-hover">
             <thead>
