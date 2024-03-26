@@ -156,8 +156,7 @@ const Details = ({ handleChangeMain }) => {
   return ( <div className="general-container">
       <div className="details-sub-container">
           <table className="table table-bordered table-hover">
-            <thead>
-              <tr>
+            <thead>  <tr>
                 <th>sl no</th>
                 <th>sales order</th>
                 <th>service Name</th>
